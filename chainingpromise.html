@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function wakeUp() {
+            return new Promise((resolve) => {
+                
+                    resolve("I Woke Up!");
+                  
+            });
+             return new Promise((resolve, reject) => {
+                const flag = true;
+                setTimeout(() => {
+                    if (flag) {
+                        resolve("Brushed Teeth");
+                    } else {
+                        reject("Did not!!");
+                    }
+                }, 3000); 
+            });
+            return new Promise((resolve, reject) => {
+                const flag = true;
+                setTimeout(() => {
+                    if (flag) {
+                        resolve("Have Breakfast");
+                    } else {
+                        reject("Do not");
+                    }
+                }, 3000); 
+            });
+        }
+
+        wakeUp()
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((error) => {
+                console.log("Wait", error);
+            });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
