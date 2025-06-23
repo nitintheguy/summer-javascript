@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let str = "geeksforgeeks";
+let m = new Map();
+let res = null;
+for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (m.has(char)) {
+        m.set(char, -1);
+    } else {
+        m.set(char, i);
+    }
+}
+m.forEach((index, char) => {
+    if (
+        index !== -1
+        &&
+        (res === null || index < m.get(res))
+    ) {
+        res = char;
+    }
+});
+console.log("Input: " + str);
+console.log("Non-repeating character: " + res);
+</script>
+<body>
+    
+</body>
+</html>
